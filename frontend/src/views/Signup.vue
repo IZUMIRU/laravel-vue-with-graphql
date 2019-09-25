@@ -10,15 +10,15 @@
             required
           ></v-text-field>
           <v-text-field v-model="email" label="E-mail" required></v-text-field>
-          <v-text-field v-model="pass" label="password" required></v-text-field>
-          <v-text-field
+          <v-text-field v-model="pass" label="password" required></v-text-field
+          ><v-text-field
             v-model="passConf"
             label="password_confirm"
             required
           ></v-text-field>
-          <v-btn color="primary" type="submit">アカウント作成</v-btn>
-        </v-flex>
-      </v-layout>
+          <v-btn color="primary" type="submit">create account</v-btn>
+        </v-flex></v-layout
+      >
     </v-container>
   </v-form>
 </template>
