@@ -46,18 +46,6 @@ export const CREATE_ACCOUNT = gql`
   }
 `;
 
-export const MARK_FAVORITE = gql`
-  mutation($tweet_id: Int!, $timeline_id: Int!) {
-    MarkFavorite(tweet_id: $tweet_id, timeline_id: $timeline_id)
-  }
-`;
-
-export const UN_MARK_FAVORITE = gql`
-  mutation($tweet_id: Int!, $timeline_id: Int!) {
-    UnMarkFavorite(tweet_id: $tweet_id, timeline_id: $timeline_id)
-  }
-`;
-
 export const UPDATE_PROFILE = gql`
   mutation($name: String!, $avatar: String) {
     UpdateProfile(name: $name, avatar: $avatar) {
@@ -70,18 +58,30 @@ export const UPDATE_PROFILE = gql`
   }
 `;
 
-export const FOLLOW_ACCOUNT = gql`
-  mutation($id: Int!) {
-    FollowAccount(id: $id) {
-      id
-      account_id
-      follow_account_id
-    }
-  }
-`;
+// export const MARK_FAVORITE = gql`
+//   mutation($tweet_id: Int!, $timeline_id: Int!) {
+//     MarkFavorite(tweet_id: $tweet_id, timeline_id: $timeline_id)
+//   }
+// `;
 
-export const UN_FOLLOW_ACCOUNT = gql`
-  mutation($id: Int!) {
-    UnFollowAccount(id: $id)
-  }
-`;
+// export const UN_MARK_FAVORITE = gql`
+//   mutation($tweet_id: Int!, $timeline_id: Int!) {
+//     UnMarkFavorite(tweet_id: $tweet_id, timeline_id: $timeline_id)
+//   }
+// `;
+
+// export const FOLLOW_ACCOUNT = gql`
+//   mutation($id: Int!) {
+//     FollowAccount(id: $id) {
+//       id
+//       account_id
+//       follow_account_id
+//     }
+//   }
+// `;
+
+// export const UN_FOLLOW_ACCOUNT = gql`
+//   mutation($id: Int!) {
+//     UnFollowAccount(id: $id)
+//   }
+// `;

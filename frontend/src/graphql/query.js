@@ -1,87 +1,49 @@
 import gql from "graphql-tag";
 
-export const LOGIN = gql`
-  mutation($email: String!, $password: String!) {
-    Login(email: $email, password: $password) {
-      access_token
-      expires_in
-    }
-  }
-`;
-
-export const CREATE_TWEET = gql`
-  mutation($tweet: String!) {
-    CreateTweet(content: $tweet) {
+export const TIMELINE = gql`
+  query($id: Int!) {
+    Timeline(id: $id) {
       id
-      content
-      tweeted_at
-    }
-  }
-`;
-
-export const CREATE_ACCOUNT = gql`
-  mutation(
-    $name: String!
-    $twitter_id: String!
-    $email: String!
-    $password: String!
-    $password_confirmation: String!
-  ) {
-    CreateAccount(
-      name: $name
-      twitter_id: $twitter_id
-      email: $email
-      password: $password
-      password_confirmation: $password_confirmation
-    ) {
-      account {
-        twitter_id
+      tweet {
+        id
+        content
+        account {
+          twitter_id
+          avatar
+        }
       }
-      token {
-        access_token
-        token_type
-        expires_in
+      originalFavorite {
+        account {
+          twitter_id
+          name
+        }
+      }
+      favorite {
+        favorite_at
       }
     }
   }
 `;
 
-export const MARK_FAVORITE = gql`
-  mutation($tweet_id: Int!, $timeline_id: Int!) {
-    MarkFavorite(tweet_id: $tweet_id, timeline_id: $timeline_id)
-  }
-`;
-
-export const UN_MARK_FAVORITE = gql`
-  mutation($tweet_id: Int!, $timeline_id: Int!) {
-    UnMarkFavorite(tweet_id: $tweet_id, timeline_id: $timeline_id)
-  }
-`;
-
-export const UPDATE_PROFILE = gql`
-  mutation($name: String!, $avatar: String) {
-    UpdateProfile(name: $name, avatar: $avatar) {
-      id
+export const ACCOUNT = gql`
+  query {
+    Account {
       twitter_id
       name
-      email
       avatar
     }
   }
 `;
 
-export const FOLLOW_ACCOUNT = gql`
-  mutation($id: Int!) {
-    FollowAccount(id: $id) {
-      id
-      account_id
-      follow_account_id
+export const ACCOUNTS = gql`
+  query($count: Int!, $page: Int!) {
+    Accounts(count: $count, page: $page) {
+      data {
+        id
+        twitter_id
+        avatar
+        is_following_account
+      }
     }
-  }
-`;
-
-export const UN_FOLLOW_ACCOUNT = gql`
-  mutation($id: Int!) {
-    UnFollowAccount(id: $id)
   }
 `;
