@@ -1,7 +1,9 @@
 <template>
   <v-container>
     <v-layout row wrap>
-      <v-flex xs12> <v-subheader> Tweet </v-subheader> </v-flex>
+      <v-flex xs12>
+        <v-subheader>Tweet Now</v-subheader>
+      </v-flex>
       <v-flex mb-2>
         <v-sheet class="pa-4" elevation="6">
           <v-form @submit="postTweet" onSubmit="return false;">
@@ -13,6 +15,9 @@
             <v-btn type="submit" color="primary">tweet</v-btn>
           </v-form>
         </v-sheet>
+      </v-flex>
+      <v-flex xs12>
+        <v-subheader>My Tweets</v-subheader>
       </v-flex>
       <v-flex xs12>
         <v-sheet class="pa-4" elevation="6">

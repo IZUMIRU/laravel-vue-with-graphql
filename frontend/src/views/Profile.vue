@@ -1,3 +1,4 @@
+<!-- TODO: update profile -->
 <template>
   <v-form @submit="updateProfile" onSubmit="return false;">
     <v-container grid-list-md>
@@ -26,11 +27,11 @@
                 v-if="account.avatar"
               />
               <img :src="imageUrl" height="150" v-else-if="imageUrl" />
+              <!-- TODO: icon -->
               <v-text-field
                 label="Select Image"
                 @click="pickFile"
                 v-model="imageName"
-                prepend-icon="attach_file"
               ></v-text-field>
               <input
                 type="file"

@@ -2,6 +2,8 @@
 
 [技術書典7](https://techbookfest.org/event/tbf07) で [Laravel + Vue.jsではじめる 実践 GraphQL入門](https://booth.pm/ja/items/1326843) という書籍を買ったので実装してみる。
 
+![image](https://user-images.githubusercontent.com/11635641/65629029-9f1a2c00-e00d-11e9-9c48-e652a089017a.png)
+
 ### frontend
 
 ```bash
